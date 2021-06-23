@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+
+head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/static/css/todoStyles.css")
+    title Parcial #2
+<body>
+    header
+        nav
+            a(href="https://github.com/2021-SEMI-DESIX-G1/lam_angel_parcial_2" target="_blank") Source Code
+                img(src="/static/assets/GitHub-Mark-32px.png") 
+        h1 Parcial #2: To do List
+        span(id="author") Angel Lam 1LS241
+    main
+        section(class="card" id="card")
+            h1(class="title") To do List
+            form#task-form(action="")
+                input(type="text" name="task" placeholder="Introduzca una tarea" class="task-input" id="task-input" required)
+                select(class="task-dropdown" id="task-dropdown" name="task-type")
+                    option(selected value="" disabled) Tipo
+                    option(value="") Ninguno
+                    option(value="universidad") Universidad
+                    option(value="trabajo") Trabajo
+                button(class="task-submit" type="submit") Guardar
+            .main-task-list
+
+script(src="/static/js/todoScript.js") 
