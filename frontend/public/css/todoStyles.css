@@ -119,3 +119,80 @@ input[type="text"]:focus {
   transform: scale(1.2);
   transition: 500ms all;
 }
+
+.main-task-list {
+  margin-top: 25px;
+}
+
+.task-name {
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.task-type {
+  font-size: 1rem;
+  background-color: #98c1d9;
+  align-self: baseline;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-top: 2px;
+  margin-left: 20px;
+  padding: 0 10px;
+}
+
+.task-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 1.5rem;
+}
+
+.task-checkbox {
+  display: flex;
+}
+
+.task-label {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.delete_button {
+  font-size: 1.2rem;
+  padding: 0 20px;
+  cursor: pointer;
+  background-color: #fd5971;
+  border: none;
+  border-radius: 3px;
+  transition: 150ms all;
+  height: 100%;
+}
+
+.delete_button:hover {
+  transform: scale(1.1);
+  transition: 150ms all;
+}
+
+.update_button {
+  font-size: 1.2rem;
+  padding: 0 20px;
+  cursor: pointer;
+  background-color: #e0fbfc;
+  border: none;
+  border-radius: 3px;
+  transition: 150ms all;
+  margin-right: 10px;
+  height: 100%;
+}
+
+.update_button:hover {
+  transform: scale(1.1);
+  transition: 150ms all;
+}
