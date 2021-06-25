@@ -49,7 +49,9 @@
         <section class="task-label">  
         <label for="${name}_${index}" class="task-name" style="text-decoration:${
           status === true ? "line-through" : ""
-        }">${name}</label><label for="${name}_${index}" class="task-type">${type}</label></section></div><div><button type="button" class="update_button">Actualizar</button><button type="button" class="delete_button">Borrar</button></div></div>`;
+        }">${name}</label><label for="${name}_${index}" class="task-type">${type}</label></section></div><div><button type="button" class="update_button" ${
+          status === true ? "disabled=true" : ""
+        }}>Actualizar</button><button type="button" class="delete_button">Borrar</button></div></div>`;
       },
       onCompletedTask: async (event) => {
         if (event.target.nodeName === "INPUT") {
@@ -59,9 +61,11 @@
           if (completedInput) {
             event.target.parentElement.children[1].children[0].style.textDecoration =
               "line-through";
+            event.target.parentElement.parentElement.children[1].children[0].disabled = true;
           } else {
             event.target.parentElement.children[1].children[0].style.textDecoration =
               "none";
+            event.target.parentElement.parentElement.children[1].children[0].disabled = false;
           }
 
           const data = {
@@ -124,6 +128,10 @@
         const inputId = App.htmlElements.taskInput.getAttribute("data-id");
 
         if (inputId !== "" && inputId !== null && inputId !== undefined) {
+          const childrens = [...App.htmlElements.mainTaskList.children];
+          childrens.forEach((child) => {
+            child.children[1].children[1].disabled = false;
+          });
           const updateElement = document.getElementById(
             App.htmlElements.taskInput.getAttribute("data-id")
           );
